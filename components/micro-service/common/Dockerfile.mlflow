@@ -1,0 +1,6 @@
+FROM python:3.8.5
+
+RUN pip3 install mlflow==2.2.2
+RUN pip3 install boto3
+RUN pip3 install protobuf==3.20.*
+RUN pip3 install psycopg2

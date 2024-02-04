@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  example:
+    image: ${EXAMPLE_IMG}:${EXAMPLE_TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile.run-labelmaker
+    container_name: ${EXAMPLE_CNT}
+    hostname: ${EXAMPLE_CNT}
+    env_file:
+      - .env
+    network_mode: host
+    tty: true
+
+  mlflow:
+    image: ${MLFLOW_IMG}:${MLFLOW_TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile.save-model-to-mlflow
+    container_name: ${MLFLOW_CNT}
+    hostname: ${MLFLOW_CNT}
+    env_file:
+      - .env
+    network_mode: host
+    tty: true

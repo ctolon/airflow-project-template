@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mlflow-macro-service:
+    image: ${MLFLOW_IMG}:${MLFLOW_TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${MLFLOW_CNT}
+    hostname: ${MLFLOW_CNT}
+    env_file:
+      - .env
+    volumes:
+      - /mnt/nfs:/mnt/nfs
+    network_mode: "host"
+    tty: true

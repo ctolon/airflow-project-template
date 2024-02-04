@@ -1,0 +1,16 @@
+
+project-names:
+  main: "example"
+  mlflow: "mlflow"
+
+conda-envs:
+  mlflow: "mlflow-dev"
+
+mlflow-test:
+  tracking-uri: http://0.0.0.0:5000
+  artifact-uri: "s3://mlflow"
+  server-ip: "0.0.0.0"
+  artifact-server-port: "9000"
+  on-minio: "1"
+
+    

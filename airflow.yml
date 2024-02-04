@@ -1,0 +1,9 @@
+# Description: Airflow Development Env Conda YAML File.
+# Run: conda env create --file airflow.yml
+name: airflow-dev
+channels:
+  - defaults
+dependencies:
+  - python=3.7.16
+  - pip
+  - git

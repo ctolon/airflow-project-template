@@ -1,0 +1,22 @@
+project-names:
+  main: "example"
+  mlflow: "mlflow"
+
+conda-envs:
+  mlflow: "mlflow-dev"
+
+script-paths:
+  example: "train_src/run_examplepy"
+  mlflow: "mlops/run_mlflow.py"
+
+# Pipeline Configs
+example:
+  input_path: "/mnt/nfs/data.csv"
+  handle_nul_vals: true
+  output_path: "/mnt/nfs/output.csv"
+  example-logger-config: "/opt/airflow/dags/configs/ini/logger.ini"
+
+mlflow:
+  set-tracking-uri: "http://0.0.0.0:5000"
+  set-artifact-uri: "http://0.0.0.0:9000"
+  set-artifact-location: "s3://mlflow"

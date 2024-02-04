@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  monolith-3.8.5:
+    image: ${MONOLITH_IMG}:${MONOLITH_TAG}
+    build:
+      context: ../
+      dockerfile: python-env-3.8.5/dev/Dockerfile
+    container_name: ${MONOLITH_CNT}
+    hostname: ${MONOLITH_CNT}
+    env_file:
+      - .env
+    tty: true
